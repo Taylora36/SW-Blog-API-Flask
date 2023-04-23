@@ -2,6 +2,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
 			message: null,
+			favorites: [],
+     		people: [],
+      		planets: [],
+      		vehicles: [],
+      		singleVehicle: [],
 			demo: [
 				{
 					title: "FIRST",
