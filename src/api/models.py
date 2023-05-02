@@ -10,7 +10,8 @@ class User(db.Model):
     email = db.Column(db.String(120), unique=True, nullable=False)
     password = db.Column(db.String(80), unique=False, nullable=False)
     is_active = db.Column(db.Boolean(), unique=False, nullable=False)
-    favorites_id = db.Column(db.Integer, db.ForeignKey("favorites.id"))
+    person_favorites = db.relationship('FavoritePerson', backref='User', lazy=True)
+    planet_favorites = db.relationship('FavoritePlanet', backref='User', lazy=True)
 
     def __repr__(self):
         return f'<User {self.email}>'
@@ -39,12 +40,12 @@ class Planets(db.Model):
     created = db.Column(db.DateTime, default=datetime.now)
     edited = db.Column(db.DateTime, default=None, onupdate=datetime.now)
     person_id = db.Column(db.Integer, db.ForeignKey("person.id"))
-    favorites_id = db.Column(db.Integer, db.ForeignKey("favorites.id"))
+    planet_favorites = db.relationship('FavoritePlanet', backref='Planets', lazy=True)
 
 
 
 class Person(db.Model):
-    __tablename__ = 'person'
+    # __tablename__ = 'person'
     # Here we define columns for the table person
     id = db.Column(db.Integer, primary_key=True)
     #These are all the properties of people in the SW universe
@@ -59,7 +60,7 @@ class Person(db.Model):
     skin_color = db.Column(db.String(64))
     vehicles = db.relationship("Vehicles")
     planets = db.relationship("Planets")
-    favorites_id = db.Column(db.Integer, db.ForeignKey("favorites.id"))
+    person_favorites = db.relationship('FavoritePerson', backref='Person', lazy=True)
 
 
     #These are things that people are related to (other than people)
@@ -69,6 +70,28 @@ class Person(db.Model):
     created = db.Column(db.DateTime, default=datetime.now)
     edited = db.Column(db.DateTime, default=None, onupdate=datetime.now)
 
+    def __repr__(self):
+        return '<Person %r>' % self.name
+
+    def serialize(self):
+        return {
+            "id": self.id,
+            "name": self.name,
+            "height": self.height,
+            "mass": self.mass,
+            "hair_color": self.hair_color,
+            "skin_color": self.skin_color,
+            "eye_color": self.eye_color,
+            "birth_year": self.birth_year,
+            "gender": self.gender,
+            "is_bby": self.is_bby,
+            "vehicles": self.vehicles,
+            "starships": self.starships,
+            "planets": self.planets,
+            "favorites_id": self.favorites_id           
+
+            # do not serialize the password, its a security breach
+        }
 
 
 class Vehicles(db.Model):
@@ -111,12 +134,34 @@ class Starships(db.Model):
     person_id = db.Column(db.Integer, db.ForeignKey("person.id"))
     favorites_id = db.Column(db.Integer, db.ForeignKey("favorites.id"))
 
-class Favorites(db.Model):
+class FavoritePerson(db.Model):
     __tablename__ = 'favorites'
     id = db.Column(db.Integer, primary_key=True)
-    person = db.relationship("Person")
-    planets = db.relationship("Planets")
-    vehicles = db.relationship("Vehicles")
-    starships = db.relationship("Starships")
-    user = db.relationship("User")
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    person_id = db.Column(db.Integer, db.ForeignKey('person.id'))
 
+    def __repr__(self):
+        return '<FavoritePerson %r>' % self.user_id
+
+    def serialize(self):
+        user = User.query.get(self.user_id)
+        return {
+            "user": user.username,
+            "person_id": self.person_id,
+        }
+
+class FavoritePlanet(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    planets_id = db.Column(db.Integer, db.ForeignKey('planets.id'))        
+
+    def __repr__(self):
+        return '<FavoritePlanet %r>' % self.user_id
+
+    def serialize(self):
+        user = User.query.get(self.user_id)
+        return {
+            "id": self.id,
+            "user": user.username,
+            "planet_id": self.planet_id,
+        }
