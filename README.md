@@ -1,4 +1,4 @@
-<div align="center" width="100%">
+<div align="center" max-width="100%">
 <img width="290" alt="Screenshot 2023-07-15 162514" src="https://github.com/Taylora36/SW-Blog-API-Flask/assets/118857845/4fa6e5bd-5dfc-474c-956e-24839c653656">
 </div>
 
