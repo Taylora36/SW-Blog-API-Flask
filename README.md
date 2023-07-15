@@ -1,5 +1,5 @@
 <div align="center">
-<img width="450" alt="Screenshot 2023-07-15 162514" src="https://github.com/Taylora36/SW-Blog-API-Flask/assets/118857845/af6aa5da-d440-4b7d-89bf-068f21b3d1fc">
+<img width="700" alt="Screenshot 2023-07-15 162514" src="https://github.com/Taylora36/SW-Blog-API-Flask/assets/118857845/af6aa5da-d440-4b7d-89bf-068f21b3d1fc">
 </div>
 # Star Wars Blog
 
