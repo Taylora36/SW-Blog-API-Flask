@@ -1,4 +1,5 @@
 <img width="290" alt="Screenshot 2023-07-15 162514" src="https://github.com/Taylora36/SW-Blog-API-Flask/assets/118857845/af6aa5da-d440-4b7d-89bf-068f21b3d1fc">
+---
 # Star Wars Blog
 
 Star Wars blog presents a list of categorized cards that users can sift through to learn more about that Star Wars character, planet, or vehicle.
@@ -8,7 +9,7 @@ Categories:
 - Planets
 - Vehicles
 
-## Outline of Application:
+## Features
 - Click on Details to load single page view of the card, which shows additional information on that entry
 - Can favorite multiple cards
 - Can also delete cards from user favorites
