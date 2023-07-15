@@ -1,4 +1,4 @@
-![Header]("https://github.com/Taylora36/SW-Blog-API-Flask/assets/118857845/af6aa5da-d440-4b7d-89bf-068f21b3d1fc")
+![Header](src="https://github.com/Taylora36/SW-Blog-API-Flask/assets/118857845/af6aa5da-d440-4b7d-89bf-068f21b3d1fc")
 
 # Star Wars Blog
 
