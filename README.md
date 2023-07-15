@@ -11,7 +11,7 @@ Star Wars blog presents a list of categorized cards that users can sift through 
 - Planets
 - Vehicles
 
-### Outline
+### Components:
 - Click on Details to load single page view of the card, which shows additional information on that entry
 - Can favorite multiple cards
 - Can also delete cards from user favorites
