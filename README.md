@@ -26,7 +26,7 @@ Star Wars blog presents a list of categorized cards that users can sift through 
 </div>
 
 ## Additional Features
-Some features to add:
+### Some features to add:
 - Spaceships category
 - More information for each card
 - Profile page to interact with favorites
