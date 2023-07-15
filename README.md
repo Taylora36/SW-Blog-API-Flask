@@ -1,6 +1,6 @@
-
-<img align="center" width="450" alt="Screenshot 2023-07-15 162514" src="https://github.com/Taylora36/SW-Blog-API-Flask/assets/118857845/4fa6e5bd-5dfc-474c-956e-24839c653656">
-
+<div align="center">
+<img width="450" alt="Screenshot 2023-07-15 162514" src="https://github.com/Taylora36/SW-Blog-API-Flask/assets/118857845/4fa6e5bd-5dfc-474c-956e-24839c653656">
+</div>
 
 # Star Wars Blog
 
