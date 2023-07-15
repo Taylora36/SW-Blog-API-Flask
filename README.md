@@ -6,7 +6,7 @@
 
 Star Wars blog presents a list of categorized cards that users can sift through to learn more about that Star Wars character, planet, or vehicle.
 
-Categories:
+### Categories:
 - Characters
 - Planets
 - Vehicles
