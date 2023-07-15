@@ -1,4 +1,4 @@
-![Header](src="https://github.com/Taylora36/SW-Blog-API-Flask/assets/118857845/af6aa5da-d440-4b7d-89bf-068f21b3d1fc")
+<img width="290" alt="Screenshot 2023-07-15 162514" src="https://github.com/Taylora36/SW-Blog-API-Flask/assets/118857845/4fa6e5bd-5dfc-474c-956e-24839c653656">
 
 # Star Wars Blog
 
